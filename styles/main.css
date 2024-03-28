@@ -1,0 +1,219 @@
+*, html {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+  direction: rtl;
+}
+@media (max-width: 576px) {
+  html {
+    font-size: 2.75vw;
+  }
+}
+@media (min-width: 2000px) {
+  html {
+    font-size: 1vw;
+  }
+}
+
+body {
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  outline: none;
+  border: none;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  background-color: transparent;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+@font-face {
+  font-family: NotoKufiArabic-SemiBold;
+  src: url("../fonts/NotoKufiArabic-SemiBold.ttf");
+}
+@font-face {
+  font-family: Khebrat-Musamim-Bold;
+  src: url("../fonts/Khebrat-Musamim-Bold.ttf");
+}
+.page-container .page-body-wrapper .main .content-wrapper .add-lesson-form-wrapper, .page-container .page-body-wrapper .main .content-wrapper .form-overlay {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.page-container .page-body-wrapper .main .content-wrapper .form-overlay {
+  width: 100%;
+  height: 100%;
+  z-index: 10000;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.page-container .navbar {
+  background-color: #fff;
+  box-shadow: 0px 0.3125rem 1.3125rem -0.3125rem #ddd;
+}
+.page-container .navbar .navbar-brand-wrapper {
+  width: 14.6875rem;
+  height: 3.75rem;
+  background-color: #fff;
+}
+.page-container .navbar .navbar-brand-wrapper .navbar-brand {
+  padding: 0.25rem 0;
+  margin-right: 0;
+  font-size: 1.5rem;
+}
+.page-container .navbar .navbar-brand-wrapper .navbar-brand img {
+  width: calc(14.6875rem - 8.125rem);
+  max-width: 100%;
+  margin: auto;
+  vertical-align: middle;
+}
+.page-container .navbar .navbar-brand-wrapper .brand-title {
+  color: #0f1531;
+  font-family: NotoKufiArabic-SemiBold;
+  font-size: 1rem;
+}
+.page-container .page-body-wrapper {
+  padding-top: 3.75rem;
+}
+.page-container .page-body-wrapper .sidebar {
+  min-height: calc(100vh - 3.75rem);
+  width: 14.6875rem;
+  background-color: #fff;
+  font-family: NotoKufiArabic-SemiBold;
+}
+.page-container .page-body-wrapper .sidebar .nav {
+  padding: 1.45rem 1rem;
+}
+.page-container .page-body-wrapper .sidebar .nav .nav-item .nav-link {
+  padding: 0.8125rem 1.937rem 0.8125rem 1rem;
+  gap: 0.75rem;
+  color: #6c7383;
+  border-radius: 0.5rem;
+}
+.page-container .page-body-wrapper .sidebar .nav .nav-item .nav-link.active {
+  background-color: #4b49ac;
+  color: #fff;
+}
+.page-container .page-body-wrapper .main {
+  width: calc(100% - 14.6875rem);
+  min-height: calc(100vh - 3.75rem);
+  padding: 2.375rem 2.375rem;
+  background-color: #f5f7ff;
+}
+.page-container .page-body-wrapper .main .content-wrapper {
+  padding: 1.5rem;
+  background-color: #fff;
+  border-radius: 1.25rem;
+}
+.page-container .page-body-wrapper .main .content-wrapper .lessons-page {
+  gap: 1rem;
+}
+.page-container .page-body-wrapper .main .content-wrapper .lessons-page .head .add-lesson {
+  padding: 1rem;
+  background-color: #4b49ac;
+  color: #fff;
+  font-family: NotoKufiArabic-SemiBold;
+  border-radius: 0.9375rem;
+}
+.page-container .page-body-wrapper .main .content-wrapper .lessons-page .lessons-list {
+  gap: 1rem;
+}
+.page-container .page-body-wrapper .main .content-wrapper .lessons-page .lessons-list .list-item {
+  width: calc((100% - 4rem) / 5);
+  height: 20rem;
+  border-radius: 1rem;
+  border: 0.0625rem solid #eee;
+}
+.page-container .page-body-wrapper .main .content-wrapper .lessons-page .lessons-list .list-item .item-link .img-wrapper {
+  height: 70%;
+}
+.page-container .page-body-wrapper .main .content-wrapper .lessons-page .lessons-list .list-item .item-link .img-wrapper .lesson-img {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.page-container .page-body-wrapper .main .content-wrapper .lessons-page .lessons-list .list-item .item-link .lesson-text {
+  height: 30%;
+  padding: 0.75rem 1rem;
+  color: #000;
+  font-family: NotoKufiArabic-SemiBold;
+}
+.page-container .page-body-wrapper .main .content-wrapper .lessons-page .lessons-list .list-item .item-link .lesson-text .lesson-title {
+  font-size: 1.25rem;
+}
+.page-container .page-body-wrapper .main .content-wrapper .lessons-page .lessons-list .list-item .item-link .lesson-text .category {
+  color: #6c7383;
+}
+.page-container .page-body-wrapper .main .content-wrapper .add-lesson-form-wrapper {
+  width: 60%;
+  height: 60%;
+  background-color: #fff;
+  display: none;
+  z-index: 1000000;
+  border-radius: 1.25rem;
+}
+.page-container .page-body-wrapper .main .content-wrapper .add-lesson-form-wrapper.show {
+  display: block;
+}
+.page-container .page-body-wrapper .main .content-wrapper .add-lesson-form-wrapper.hide {
+  display: none;
+}
+.page-container .page-body-wrapper .main .content-wrapper .add-lesson-form-wrapper .form-items-wrapper .form-head {
+  padding: 1.25rem 2rem;
+  background-color: #4b49ac;
+  border-radius: 1.25rem 1.25rem 0 0;
+}
+.page-container .page-body-wrapper .main .content-wrapper .add-lesson-form-wrapper .form-items-wrapper .form-head .head-title {
+  color: #fff;
+  font-family: NotoKufiArabic-SemiBold;
+}
+.page-container .page-body-wrapper .main .content-wrapper .add-lesson-form-wrapper .form-items-wrapper .form-head .close-form {
+  color: #fff;
+  font-size: 1.75rem;
+}
+.page-container .page-body-wrapper .main .content-wrapper .add-lesson-form-wrapper .form-items-wrapper .add-lesson-form {
+  gap: 1rem;
+  padding: 2rem;
+}
+.page-container .page-body-wrapper .main .content-wrapper .add-lesson-form-wrapper .form-items-wrapper .add-lesson-form .form-input {
+  width: calc((100% - 1rem) / 2);
+}
+.page-container .page-body-wrapper .main .content-wrapper .add-lesson-form-wrapper .form-items-wrapper .add-lesson-form .form-input label {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+.page-container .page-body-wrapper .main .content-wrapper .add-lesson-form-wrapper .form-items-wrapper .add-lesson-form .form-input .form-control {
+  height: 2.875rem;
+  padding: 0.5rem 1.375rem;
+  font-size: 0.875rem;
+  color: #495057;
+  border: 0.0625rem solid #ced4da;
+  border-radius: 0.25rem;
+}
+.page-container .page-body-wrapper .main .content-wrapper .form-overlay {
+  display: none;
+}
+.page-container .page-body-wrapper .main .content-wrapper .form-overlay.show {
+  display: block;
+}
+.page-container .page-body-wrapper .main .content-wrapper .form-overlay.hide {
+  display: none;
+}/*# sourceMappingURL=main.css.map */
