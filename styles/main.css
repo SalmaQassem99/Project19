@@ -313,12 +313,12 @@ a {
   border-radius: 2.5vh;
 }
 .add-lesson-form-wrapper .form-items-wrapper.show {
-  animation-name: scaleUp;
+  animation-name: scaleFormUp;
   animation-duration: 0.7s;
   animation-timing-function: ease-in-out;
 }
 .add-lesson-form-wrapper .form-items-wrapper.hide {
-  animation-name: scaleDown;
+  animation-name: scaleFormDown;
   animation-duration: 0.7s;
   animation-timing-function: ease-in-out;
 }
@@ -447,7 +447,7 @@ a {
   display: none;
 }
 
-@keyframes scaleUp {
+@keyframes scaleFormUp {
   0% {
     transform: scale3d(0, 0, 0);
   }
@@ -458,7 +458,7 @@ a {
     transform: scale3d(1, 1, 1);
   }
 }
-@keyframes scaleDown {
+@keyframes scaleFormDown {
   0% {
     transform: scale3d(1, 1, 1);
   }

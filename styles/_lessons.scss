@@ -123,12 +123,12 @@ $input-padding-1: 2.75vh;
     border-radius: $border-radius-5;
 
     &.show {
-      animation-name: scaleUp;
+      animation-name: scaleFormUp;
       animation-duration: $animation-duration;
       animation-timing-function: $animation-timing;
     }
     &.hide {
-      animation-name: scaleDown;
+      animation-name: scaleFormDown;
       animation-duration: $animation-duration;
       animation-timing-function: $animation-timing;
     }
@@ -258,7 +258,7 @@ $input-padding-1: 2.75vh;
     display: none;
   }
 }
-@keyframes scaleUp {
+@keyframes scaleFormUp {
   0% {
     transform: scale3d(0, 0, 0);
   }
@@ -269,7 +269,7 @@ $input-padding-1: 2.75vh;
     transform: scale3d(1, 1, 1);
   }
 }
-@keyframes scaleDown {
+@keyframes scaleFormDown {
   0% {
     transform: scale3d(1, 1, 1);
   }
