@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content=" This Is Description For Project 19" />
+    <title>Project 19</title>
+    <!--Bootstrap File-->
+    <link rel="stylesheet" href="./styles/bootstrap.min.css" />
+    <!--Main Css File-->
+    <link rel="stylesheet" href="./styles/main.css" />
+    <!--Icons Library-->
+    <link rel="stylesheet" href="./styles/all.min.css" />
+  </head>
+  <body>
+    <div class="pop-overlay"></div>
+    <div
+      class="popup d-flex flex-column justify-content-center align-items-center gap-3 rotate-phone"
+    >
+      <div class="message">أدر الجهاز لتلعب</div>
+      <div class="phone"></div>
+    </div>
+    <div class="page-container game-page">
+      <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+        <div
+          class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center"
+        >
+          <a class="navbar-brand brand-logo h-100" href="index.html"
+            ><img src="./media/images/logo.svg" class="h-100" alt="logo"
+          /></a>
+          <span class="brand-title">دار الجيل الجديد</span>
+        </div>
+      </nav>
+      <div class="page-body-wrapper d-flex">
+        <aside class="sidebar sidebar-offcanvas" id="sidebar">
+          <ul class="nav d-flex flex-column flex-nowrap">
+            <li class="nav-item">
+              <a class="nav-link d-flex align-items-center" href="index.html">
+                <i class="fa-solid fa-book-open"></i>
+                <span class="menu-title">الكتب</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-flex align-items-center" href="lessons.html">
+                <i class="fa-solid fa-book-open-reader"></i>
+                <span class="menu-title">الدروس</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link d-flex align-items-center active"
+                href="match.html"
+              >
+                <i class="fa-solid fa-book-open-reader"></i>
+                <span class="menu-title">لعبة طابق</span>
+              </a>
+            </li>
+          </ul>
+        </aside>
+        <div class="main">
+          <div class="content-wrapper w-100 h-100">
+            <div
+              class="game d-flex flex-column justify-content-between"
+              style="
+                background-image: url('../media/images/match/background.svg');
+              "
+            >
+              <div class="head d-flex justify-content-between">
+                <div class="controls d-flex gap-3">
+                  <button
+                    class="back icon d-flex justify-content-center align-items-center"
+                  >
+                    <i class="fa-solid fa-right-long"></i>
+                  </button>
+                  <button
+                    class="info icon d-flex justify-content-center align-items-center"
+                    text="طابق الصور مع صورهم الظلية"
+                  >
+                    <i class="fa-solid fa-exclamation"></i>
+                  </button>
+                </div>
+                <div class="scoreWrapper d-flex align-items-center">
+                  <div class="scoreItem d-flex align-items-center">
+                    <div class="score"></div>
+                  </div>
+                  <div
+                    class="scoreIcon d-flex align-items-center justify-content-center"
+                  >
+                    <img
+                      src="./media/images/match/score.svg"
+                      class="w-100 h-100 object-fit-contain"
+                      alt="score-icon"
+                    />
+                  </div>
+                </div>
+              </div>
+              <button
+                class="pause icon d-flex justify-content-center align-items-center"
+              >
+                <i class="fa-solid fa-pause"></i>
+                <i class="fa-solid fa-play hide"></i>
+              </button>
+              <div class="cardContainer w-100">
+                <div class="card-wrapper">
+                  <div class="container h-100">
+                    <div
+                      class="card w-100 h-100 d-flex justify-content-center align-items-center position-relative rounded-4"
+                    >
+                      <div
+                        class="m-0 title d-flex flex-column align-items-center"
+                      >
+                        <p
+                          class="first-word word d-inline-block m-0"
+                          data-text="طابق الصور"
+                        >
+                          طابق الصور
+                        </p>
+                        <p
+                          class="word second-line m-0"
+                          data-text="مع صورهم الظلية"
+                        >
+                          مع صورهم الظلية
+                        </p>
+                      </div>
+                    </div>
+                    <button class="play rounded-pill position-absolute">
+                      <div
+                        class="vectors w-100 h-100 position-relative d-flex justify-content-center align-items-center"
+                      >
+                        <div
+                          class="btn-vector top d-flex align-items-center justify-content-center position-absolute"
+                        >
+                          <img
+                            src="./media/images/match/buttonVector1.svg"
+                            alt="btn-vector-1"
+                            class="w-100 h-100 object-fit-contain"
+                          />
+                        </div>
+                        <i class="fa-solid fa-play"></i>
+                        <div
+                          class="btn-vector bottom d-flex align-items-center justify-content-center position-absolute"
+                        >
+                          <img
+                            src="./media/images/match/buttonVector2.svg"
+                            alt="btn-vector-2"
+                            class="w-100 h-100 object-fit-contain"
+                          />
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="body d-flex align-items-center gap-3">
+                <button
+                  class="leftButton arrow disabled rounded-4 d-flex justify-content-center align-items-center"
+                >
+                  <i class="fa-solid fa-chevron-right"></i>
+                </button>
+                <div
+                  class="body-wrapper w-100 h-100 d-flex align-items-center gap-3"
+                >
+                  <div
+                    id="pictures-container"
+                    class="d-flex align-items-center flex-wrap"
+                  >
+                    <div
+                      class="pictureContainer d-flex justify-content-center align-items-center"
+                    >
+                      <div
+                        class="pictureWrapper picture"
+                        draggable="true"
+                        data-id="1"
+                      >
+                        <img
+                          src="./media/images/match/apple.svg"
+                          class="h-100 object-fit-contain"
+                          alt="apple-img"
+                        />
+                      </div>
+                    </div>
+                    <div
+                      class="pictureContainer d-flex justify-content-center align-items-center"
+                    >
+                      <div
+                        class="pictureWrapper picture"
+                        draggable="true"
+                        data-id="4"
+                      >
+                        <img
+                          src="./media/images/match/planet.svg"
+                          class="h-100 object-fit-contain"
+                          alt="planet-img"
+                        />
+                      </div>
+                    </div>
+                    <div
+                      class="pictureContainer d-flex justify-content-center align-items-center"
+                    >
+                      <div
+                        class="pictureWrapper picture"
+                        draggable="true"
+                        data-id="2"
+                      >
+                        <img
+                          src="./media/images/match/bag.svg"
+                          class="h-100 object-fit-contain"
+                          alt="bag-img"
+                        />
+                      </div>
+                    </div>
+                    <div
+                      class="pictureContainer d-flex justify-content-center align-items-center"
+                    >
+                      <div
+                        class="pictureWrapper picture"
+                        draggable="true"
+                        data-id="5"
+                      >
+                        <img
+                          src="./media/images/match/pencil.svg"
+                          class="h-100 object-fit-contain"
+                          alt="pencil-img"
+                        />
+                      </div>
+                    </div>
+                    <div
+                      class="pictureContainer d-flex justify-content-center align-items-center"
+                    >
+                      <div
+                        class="pictureWrapper picture"
+                        draggable="true"
+                        data-id="3"
+                      >
+                        <img
+                          src="./media/images/match/watermelon.svg"
+                          class="h-100 object-fit-contain"
+                          alt="watermelon-img"
+                        />
+                      </div>
+                    </div>
+                    <div
+                      class="pictureContainer d-flex justify-content-center align-items-center"
+                    >
+                      <div
+                        class="pictureWrapper picture"
+                        draggable="true"
+                        data-id="6"
+                      >
+                        <img
+                          src="./media/images/match/ruler.svg"
+                          class="h-100 object-fit-contain"
+                          alt="ruler-img"
+                        />
+                      </div>
+                    </div>
+                    <div
+                      class="pictureContainer d-flex justify-content-center align-items-center"
+                    >
+                      <div
+                        class="pictureWrapper picture"
+                        draggable="true"
+                        data-id="7"
+                      >
+                        <img
+                          src="./media/images/match/orange.svg"
+                          class="h-100 object-fit-contain"
+                          alt="orange-img"
+                        />
+                      </div>
+                    </div>
+                    <div
+                      class="pictureContainer d-flex justify-content-center align-items-center"
+                    >
+                      <div
+                        class="pictureWrapper picture"
+                        draggable="true"
+                        data-id="8"
+                      >
+                        <img
+                          src="./media/images/match/book.svg"
+                          class="h-100 object-fit-contain"
+                          alt="book-img"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    id="silhouettes-container"
+                    class="d-flex align-items-center flex-wrap"
+                  >
+                    <div
+                      class="pictureContainer d-flex justify-content-center align-items-center"
+                    >
+                      <div
+                        class="pictureWrapper silhouette"
+                        droppable="true"
+                        draggable="false"
+                        data-id="5"
+                      >
+                        <img
+                          src="./media/images/match/pencil-shadow.svg"
+                          class="h-100 object-fit-contain"
+                          alt="pencil-shadow"
+                          droppable="false"
+                        />
+                      </div>
+                    </div>
+                    <div
+                      class="pictureContainer d-flex justify-content-center align-items-center"
+                    >
+                      <div
+                        class="pictureWrapper silhouette"
+                        droppable="true"
+                        draggable="false"
+                        data-id="4"
+                      >
+                        <img
+                          src="./media/images/match/planet-shadow.svg"
+                          class="h-100 object-fit-contain"
+                          alt="planet-shadow"
+                        />
+                      </div>
+                    </div>
+                    <div
+                      class="pictureContainer d-flex justify-content-center align-items-center"
+                    >
+                      <div
+                        class="pictureWrapper silhouette"
+                        droppable="true"
+                        draggable="false"
+                        data-id="7"
+                      >
+                        <img
+                          src="./media/images/match/orange-shadow.svg"
+                          class="h-100 object-fit-contain"
+                          alt="orange-shadow"
+                        />
+                      </div>
+                    </div>
+                    <div
+                      class="pictureContainer d-flex justify-content-center align-items-center"
+                    >
+                      <div
+                        class="pictureWrapper silhouette"
+                        droppable="true"
+                        draggable="false"
+                        data-id="1"
+                      >
+                        <img
+                          src="./media/images/match/apple-shadow.svg"
+                          class="h-100 object-fit-contain"
+                          alt="apple-shadow"
+                          droppable="false"
+                          draggable="false"
+                        />
+                      </div>
+                    </div>
+                    <div
+                      class="pictureContainer d-flex justify-content-center align-items-center"
+                    >
+                      <div
+                        class="pictureWrapper silhouette"
+                        droppable="true"
+                        draggable="false"
+                        data-id="6"
+                      >
+                        <img
+                          src="./media/images/match/ruler-shadow.svg"
+                          class="h-100 object-fit-contain"
+                          alt="ruler-shadow"
+                        />
+                      </div>
+                    </div>
+                    <div
+                      class="pictureContainer d-flex justify-content-center align-items-center"
+                    >
+                      <div
+                        class="pictureWrapper silhouette"
+                        droppable="true"
+                        draggable="false"
+                        data-id="8"
+                      >
+                        <img
+                          src="./media/images/match/book-shadow.svg"
+                          class="h-100 object-fit-contain"
+                          alt="book-shadow"
+                        />
+                      </div>
+                    </div>
+                    <div
+                      class="pictureContainer d-flex justify-content-center align-items-center"
+                    >
+                      <div
+                        class="pictureWrapper silhouette"
+                        droppable="true"
+                        draggable="false"
+                        data-id="3"
+                      >
+                        <img
+                          src="./media/images/match/watermelon-shadow.svg"
+                          class="h-100 object-fit-contain"
+                          alt="watermelon-shadow"
+                        />
+                      </div>
+                    </div>
+                    <div
+                      class="pictureContainer d-flex justify-content-center align-items-center"
+                    >
+                      <div
+                        class="pictureWrapper silhouette"
+                        droppable="true"
+                        draggable="false"
+                        data-id="2"
+                      >
+                        <img
+                          src="./media/images/match/bag-shadow.svg"
+                          class="h-100 object-fit-contain"
+                          alt="bag-shadow"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button
+                  class="rightButton arrow rounded-4 d-flex justify-content-center align-items-center"
+                >
+                  <i class="fa-solid fa-chevron-left"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="link-address" style="display: none">
+      https://www.google.com/
+    </div>
+    <div class="success-wrapper">
+      <div class="success-card rounded-5 p-3">
+        <button class="closeModal rounded-circle">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="card-wrapper h-100 rounded-5">
+          <div
+            class="img-wrapper d-flex justify-content-center align-items-center"
+          >
+            <img
+              src="./media/images/match/bunny.svg"
+              alt="bunny image"
+              class="w-100 h-100 object-fit-contain"
+            />
+          </div>
+          <div class="content-card d-flex flex-column">
+            <div class="outer-card rounded-1">
+              <div
+                class="text-card h-100 d-flex gap-3 justify-content-center align-items-center"
+              >
+                <div class="content d-flex flex-column align-items-center">
+                  <p class="message-text text m-0" text="الإجابات الصحيحة">
+                    الإجابات الصحيحة
+                  </p>
+                  <p
+                    class="score-text text m-0 d-flex justify-content-center gap-2 flex-wrap"
+                    text=""
+                  ></p>
+                </div>
+                <div class="score-icon-wrapper">
+                  <img
+                    src="./media/images/match/object.svg"
+                    alt="score image"
+                    class="w-100 h-100 object-fit-contain"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="arrows d-flex justify-content-between">
+              <button
+                class="left-arrow arrow disabled d-flex justify-content-center align-items-center rounded-circle"
+              >
+                <i class="fa-solid fa-chevron-right"></i>
+              </button>
+              <button
+                class="right-arrow arrow d-flex justify-content-center align-items-center rounded-circle"
+              >
+                <i class="fa-solid fa-chevron-left"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="overlay"></div>
+    <audio id="start-audio" src="./media/audios/match/audio.mp3"></audio>
+    <audio id="correct-audio" src="./media/audios/match/audio.mp3"></audio>
+    <audio id="wrong-audio" src="./media/audios/match/audio.mp3"></audio>
+    <audio id="success" src="./media/audios/match/audio.mp3"></audio>
+    <audio id="1" src="./media/audios/match/audio.mp3"></audio>
+    <audio id="2" src="./media/audios/match/audio.mp3"></audio>
+    <audio id="3" src="./media/audios/match/audio.mp3"></audio>
+    <audio id="4" src="./media/audios/match/audio.mp3"></audio>
+    <audio id="5" src="./media/audios/match/audio.mp3"></audio>
+    <audio id="6" src="./media/audios/match/audio.mp3"></audio>
+    <audio id="7" src="./media/audios/match/audio.mp3"></audio>
+    <audio id="8" src="./media/audios/match/audio.mp3"></audio>
+    <script
+      id="DragDropTouch"
+      src="https://bernardo-castilho.github.io/DragDropTouch/DragDropTouch.js"
+    ></script>
+    <script>
+      const closeButton = document.querySelector(".closeModal");
+      const successItem = document.querySelector(".success-wrapper");
+      const overlay = document.querySelector(".overlay");
+      const gameContainer = document.querySelector(".game");
+
+      successItem.addEventListener("animationend", () => {
+        if (successItem.classList.contains("show")) {
+          successItem.classList.remove("show");
+        } else if (successItem.classList.contains("hide")) {
+          successItem.classList.remove("hide");
+          const link = document.querySelector(".link-address").textContent;
+          if (link !== "") {
+            gameContainer.classList.add("hideGame");
+            gameContainer.addEventListener("animationend", () => {
+              gameContainer.style.transform = "scale(0)";
+              gameContainer.classList.remove("hideGame");
+              window.location.href = link;
+            });
+          }
+        }
+      });
+      const addCloseAnimation = () => {
+        closeButton.classList.add("animate");
+        closeButton.addEventListener("animationend", () => {
+          closeButton.classList.remove("animate");
+        });
+        successItem.classList.add("hide");
+        successItem.style.visibility = "hidden";
+        overlay.classList.remove("show");
+      };
+      document.addEventListener("click", function (event) {
+        const isVisible =
+          window.getComputedStyle(successItem).visibility === "visible";
+        var isClickInside =
+          successItem.contains(event.target) || event.target === closeButton;
+        if (!isClickInside && isVisible) {
+          addCloseAnimation();
+        }
+      });
+      closeButton.addEventListener("click", () => {
+        addCloseAnimation();
+      });
+    </script>
+    <script src="./JS/match.js" async></script>
+  </body>
+</html>

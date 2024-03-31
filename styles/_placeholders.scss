@@ -1,0 +1,33 @@
+@use "./variables/mainColors" as *;
+@use "./mixins" as *;
+@use "./variables/mediaQuery" as *;
+@use "./variables/mainVariables" as *;
+
+%fixed-position {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+%button {
+  background-color: $blue-2;
+  color: $white-1;
+  border-radius: $border-radius-4;
+  font-size: 2vh;
+  font-family: NotoKufiArabic-SemiBold;
+  @include mediaQuery($medScreen_min_width) {
+    & {
+      font-size: 1rem;
+      border-radius: $border-radius-1;
+    }
+  }
+}
+
+%overlay {
+  width: 100%;
+  height: 100%;
+  @extend %fixed-position;
+  z-index: 10000;
+  background-color: $overlay;
+}

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content=" This Is Description For Project 19" />
+    <title>Project 19</title>
+    <!--Bootstrap File-->
+    <link rel="stylesheet" href="./styles/bootstrap.min.css" />
+    <!--Main Css File-->
+    <link rel="stylesheet" href="./styles/main.css" />
+    <!--Icons Library-->
+    <link rel="stylesheet" href="./styles/all.min.css" />
+  </head>
+
+  <body>
+    <div class="page-container lessons-page">
+      <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+        <div
+          class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center"
+        >
+          <a class="navbar-brand brand-logo h-100" href="index.html"
+            ><img src="./media/images/logo.svg" class="h-100" alt="logo"
+          /></a>
+          <span class="brand-title">دار الجيل الجديد</span>
+        </div>
+      </nav>
+      <div class="page-body-wrapper d-flex">
+        <aside class="sidebar sidebar-offcanvas" id="sidebar">
+          <ul class="nav d-flex flex-column flex-nowrap">
+            <li class="nav-item">
+              <a class="nav-link d-flex align-items-center" href="index.html">
+                <i class="fa-solid fa-book-open"></i>
+                <span class="menu-title">الكتب</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link d-flex align-items-center active"
+                href="lessons.html"
+              >
+                <i class="fa-solid fa-book-open-reader"></i>
+                <span class="menu-title">الدروس</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-flex align-items-center" href="match.html">
+                <i class="fa-solid fa-book-open-reader"></i>
+                <span class="menu-title">لعبة طابق</span>
+              </a>
+            </li>
+          </ul>
+        </aside>
+        <div class="main">
+          <div class="content-wrapper w-100 h-100">
+            <div class="lessons-page d-flex flex-column">
+              <div class="head">
+                <button class="add-lesson">إضافة درس</button>
+              </div>
+              <ul
+                class="lessons-list d-flex align-items-center flex-wrap p-0 m-0"
+              ></ul>
+            </div>
+            <div class="add-lesson-form-wrapper">
+              <div class="form-items-wrapper w-100 h-100 d-flex flex-column">
+                <div
+                  class="form-head d-flex align-items-center justify-content-between"
+                >
+                  <span class="head-title">الدروس - إضافة درس</span>
+                  <button
+                    class="close-form d-flex justify-content-center align-items-center"
+                  >
+                    <i class="fa-solid fa-xmark"></i>
+                  </button>
+                </div>
+                <form
+                  class="add-lesson-form w-100 h-100 d-flex flex-column justify-content-between"
+                >
+                  <div class="inputs w-100 d-flex flex-wrap">
+                    <div class="form-input">
+                      <label for="lesson-title">العنوان</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="title"
+                        id="lesson-title"
+                        placeholder="العنوان"
+                      />
+                    </div>
+                    <div class="form-input">
+                      <label for="books">التصنيف</label>
+                      <div class="select-input">
+                        <select class="form-control" id="books" name="category">
+                          <option>رياضيات</option>
+                          <option>فيزياء</option>
+                        </select>
+                        <div class="icon-wrapper">
+                          <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-input" name="date">
+                      <label for="addDate">التاريخ</label>
+                      <input
+                        id="addDate"
+                        class="form-control"
+                        type="date"
+                        name="date"
+                      />
+                    </div>
+                  </div>
+                  <button class="submit" type="submit">إضافة</button>
+                </form>
+              </div>
+            </div>
+            <div class="form-overlay w-100 h-100"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./JS/lessons.js" async></script>
+  </body>
+</html>

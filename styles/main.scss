@@ -1,5 +1,12 @@
 @use "./global";
 @use "./mixins";
 @use "./fonts";
+@use "./placeholders";
+@use "./variables/lessonsColors";
+@use "./variables/mainColors";
+@use "./variables/mainVariables";
+@use "./variables/matchColors";
 @use "./variables/mediaQuery";
-@use "./style"
+@use "./style";
+@use "./lessons";
+@use "./match";
